@@ -1,0 +1,240 @@
+/*  Globales  */
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *::before, *:after{
+    margin: 0;  padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: inherit;
+    text-decoration: none;
+}
+
+
+:root{
+    --primay: #191919;
+    --dark-primary: #000;
+    --secondary: #dd5d36;
+    --dark-secondary: #804000;
+    --black: #111;
+    --white: #fff;
+}
+
+body{
+    background: var(--primay);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p{
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+img{  width: 100%;  }
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: var(--secondary);
+}
+
+h1{ font-size: 4rem; color: var(--white);   padding: 3rem; }
+h2{  font-size: 3.2rem; }
+h3{ font-size: 2.4rem;  }
+
+span, b{  font-size: 5rem; }
+span{ color: var(--white);    }
+b{  color: var(--secondary);  }
+
+header, nav, .footer{
+    text-align: center;
+}
+header{ background: var(--dark-primary);  }
+/*   Metodologia BEM (Block Element Modifier)   */
+.navegacion{
+    background-color: var(--black);
+    padding: 1rem 0;
+}
+
+.navegacion_enlace{
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 30px;
+}
+/*  Eliminando el margin de right del segundo (a)  */
+.navegacion_enlace:last-of-type{    margin-right: 0;    }
+
+.page-active,
+.navegacion_enlace:hover{
+    color: var(--secondary)
+}
+
+/*  Estilos Producto  */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.producto{
+    background: var(--dark-primary);
+    padding: 1rem;
+    border-radius: 10px;
+}
+.producto:hover{    box-shadow: 2px 2px #fff;    }
+.zoom{  overflow: hidden;   }
+.producto-imagen{ object-fit: cover; transition: .5s;  }
+.producto-imagen:hover{ transform: scale(1.2);  }
+.producto-nombre{   font-size: 2.2rem;  }
+.precio-producto{   font-size: 1.9rem; color: var(--secondary); }
+.producto-nombre,
+.precio-producto{
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.grafico{
+    min-height: 30rem;
+    grid-column: 1/3;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grafico--camisas{
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--g{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8/9;
+}
+
+.footer{
+    background-color: var(--dark-primary);
+    margin-top: 5rem;
+    padding: 2rem 0;
+}
+
+.footer__texto{ font-size: 2.1rem;  }
+
+@media (min-width:768px) {
+    .grid{  grid-template-columns: repeat(3, 1fr);  }
+    .grafico--g{
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/*  NOSOTROS  */
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+@media (min-width:768px) {
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .nosotros-imagen{
+        grid-row: 2 / 3;
+    }
+}
+
+.nosotros-imagen{
+    width: 100%;
+    grid-row: 1/2;
+}
+
+
+/*  Bloques  */
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 30px;
+    margin-left: 30px;
+}
+@media (min-width: 768px){
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque{    text-align: center; }
+
+.icono-comprar{ width: 40%;   background-color: #fff; border-radius: 50%; }
+
+/*  Producto    */
+@media(min-width:768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.camisa{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.descripcion-camisa{ margin-block-end: 20px;   }
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.cantidad{
+    cursor: pointer;
+    border: 1rem solid var(--dark-primary);
+    border-radius: 15px;
+    background-color: var(--dark-primary);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.5rem;
+    appearance: none;
+    outline: none;
+}
+
+.form-select{
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+    appearance: none;
+    outline: none;
+}
+.form-select option{  font-weight: bold;  }
+
+h2{   margin: 3rem;   }
+
+.submit{
+    grid-column: 1/3;
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: background-color .5s ease-in;
+}
+.submit:hover{
+    cursor: pointer;
+    background-color: var(--dark-secondary);
+}
+.submit:focus{
+    transform: scale(.8);
+}

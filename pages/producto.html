@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Reseteando el navegador  -->
+    <link rel="preload" href="../css/normalize.css" as="style">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Producto</title>
+</head>
+<body>
+    
+    <header>
+        <a class="header-logo" href="../index.html">
+            <span>Frontend <b>Store</b></span>
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion_enlace" href="../index.html">Tienda</a>
+        <a class="navegacion_enlace" href="./nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Producto</h1>
+
+        <div class="camisa">
+            <img src="../img/3.jpg" alt="Imagen camisa" class="camisa-imagen">
+            <div class="camisa-contenido">
+                <p class="descripcion-camisa">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quibusdam nulla, aliquid amet sint delectus assumenda ipsa atque itaque distinctio provident? Iusto, eum nemo culpa dicta ducimus ipsam temporibus enim!
+                </p>
+
+                <form action="#" class="formulario">
+                    <select class="form-select">
+                        <option disabled selected>-- Seleccionar Talla --</option>
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select>
+                    <input class="cantidad" type="number" placeholder="Cantidadd" min="1">
+                    <input class="submit" type="submit" value="Agregar al carrito">
+                </form>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer class="footer">
+        <p class="footer__testo">Frontend Store - Todos los derechos reservados 2022</p>
+    </footer>
+
+</body>
+</html>
